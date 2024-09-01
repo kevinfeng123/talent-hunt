@@ -5,3 +5,7 @@
 body{
     @apply min-h-screen bg-white;
 }
+
+input{
+    @apply bg-white;
+}
