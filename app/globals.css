@@ -6,18 +6,14 @@
   color-scheme: light;
 }
 
-html {
-  @apply color-scheme-light;
-}
-
 body {
   @apply min-h-screen bg-white;
 }
 
 input,
+html
 select,
 textarea {
-  @apply bg-white;;
+  @apply bg-white;
 }
 
-/* Add any other global styles to reinforce light theme here */
