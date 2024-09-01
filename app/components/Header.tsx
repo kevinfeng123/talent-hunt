@@ -7,7 +7,7 @@ export default async function Header () {
     const signUpUrl = await getSignUpUrl();
 
     return (
-        <header className= "flex px-4 py-2 *:py-2 *:px-4 justify-between"> 
+        <header className= "bg-white flex px-4 py-2 *:py-2 *:px-4 justify-between"> 
             <Link href="/" className="text-navy-blue font-extrabold text-2xl ">
                 TalentHunt
             </Link>

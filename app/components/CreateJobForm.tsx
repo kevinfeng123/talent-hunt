@@ -44,7 +44,7 @@ export default function CreateJobForm ({orgId, orgName, prevListingDoc}: PagePro
 
     return (
         
-        <div className="text-navy-blue py-2 px-8 mt-4">
+        <div className="text-navy-blue py-2 px-8 mt-4 bg-white">
             <h1 className="font-bold text-xl">{prevListingDoc ? "Update" : "Create"} a Job Listing</h1>
             <form 
             className="flex flex-col mt-10 justify-center gap-3"

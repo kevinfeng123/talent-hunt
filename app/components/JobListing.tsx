@@ -38,7 +38,7 @@ export default function JobListing({listings, orgName}:JobListingProps) {
 
     return (
 
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-white">
             {listings && listings.map(listing => (
                 <div key={listing._id} className= "text-white mb-5 p-5 bg-sky-blue rounded-md flex">
                     <div className="flex-grow">
