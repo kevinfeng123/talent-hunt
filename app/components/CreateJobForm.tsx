@@ -19,16 +19,18 @@ export default function CreateJobForm ({orgId, orgName, prevListingDoc}: PagePro
     const [region, selectRegion] = useState("");
   
     async function handleSubmit (data:FormData) {
-        data.set("isUpdate", prevListingDoc ? "true" : "false");
-        if (prevListingDoc) {
-            data.set("_id", prevListingDoc._id);
+        if (region && country)
+            {data.set("isUpdate", prevListingDoc ? "true" : "false");
+            if (prevListingDoc) {
+                data.set("_id", prevListingDoc._id);
+            }
+            data.set("country", country)
+            data.set("region", region)
+            data.set("orgId", orgId)  
+            data.set("orgName", orgName)
+            const listingDoc = await uploadJob(data)
+            redirect(`/organizations/${orgId}`)
         }
-        data.set("country", country)
-        data.set("region", region)
-        data.set("orgId", orgId)  
-        data.set("orgName", orgName)
-        const listingDoc = await uploadJob(data)
-        redirect(`/organizations/${orgId}`)
     }
 
     useEffect(() => {
@@ -67,13 +69,13 @@ export default function CreateJobForm ({orgId, orgName, prevListingDoc}: PagePro
                         <CountryDropdown
                         value={country}
                         onChange={(val) => selectCountry(val)}
-                        defaultOptionLabel="United States"
+                        
                         /> 
                         <RegionDropdown
                         country={country}
                         value={region}
                         onChange={(val) => selectRegion(val)}
-                        defaultOptionLabel="New York" />
+                        />
                         </div>
                     </div>
                     <div className="flex-1">
