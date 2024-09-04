@@ -67,12 +67,13 @@ export default function CreateJobForm ({orgId, orgName, prevListingDoc}: PagePro
                         <CountryDropdown
                         value={country}
                         onChange={(val) => selectCountry(val)}
-                        
+                        defaultOptionLabel="United States"
                         /> 
                         <RegionDropdown
                         country={country}
                         value={region}
-                        onChange={(val) => selectRegion(val)} />
+                        onChange={(val) => selectRegion(val)}
+                        defaultOptionLabel="New York" />
                         </div>
                     </div>
                     <div className="flex-1">
