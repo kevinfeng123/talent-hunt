@@ -52,13 +52,13 @@ export default function CreateJobForm ({orgId, orgName, prevListingDoc}: PagePro
             >
                 <label className="input input-bordered border-sky-blue flex items-center gap-2">
                 Job Title
-                    <input type="text" name="title" className="grow" placeholder="Junior Developer" defaultValue={prevListingDoc?.title}/>
+                    <input type="text" name="title" className="grow" placeholder="Junior Developer" defaultValue={prevListingDoc?.title} required/>
                 </label>
                 <label className="input input-bordered border-sky-blue flex items-center gap-2">
                 Salary $
-                    <input type="text" name="salary" className="grow" placeholder="130000" defaultValue={prevListingDoc?.salary}/>
+                    <input type="number" name="salary" className="grow" placeholder="130000" defaultValue={prevListingDoc?.salary} required/>
                 </label>
-                <textarea className="textarea textarea-bordered border-sky-blue" name="description" placeholder="Job Description" defaultValue={prevListingDoc?.description}></textarea>
+                <textarea className="textarea textarea-bordered border-sky-blue" name="description" placeholder="Job Description" defaultValue={prevListingDoc?.description} required></textarea>
 
                 <div className="form-control mt-5 flex-row gap-8" >
                     <div className="flex-1">
@@ -79,7 +79,7 @@ export default function CreateJobForm ({orgId, orgName, prevListingDoc}: PagePro
                         <h1 className="pl-1 font-bold">Work Mode</h1>
                         <label className="label cursor-pointer">
                             <span className="text-navy-blue">In-Office</span>
-                            <input type="radio" name="workMode" value="In Office" className="radio checked:bg-sky-blue" defaultChecked={prevListingDoc?.workMode === "In Office"} />
+                            <input type="radio" name="workMode" value="In Office" className="radio checked:bg-sky-blue" defaultChecked={!prevListingDoc || prevListingDoc?.workMode === "In Office"} />
                         </label>
                         <label className="label cursor-pointer">
                             <span className="text-navy-blue">Hybrid</span>
@@ -94,7 +94,7 @@ export default function CreateJobForm ({orgId, orgName, prevListingDoc}: PagePro
                         <h1 className="text-navyblue font-bold">Type of Work</h1>
                         <label className="label cursor-pointer">
                             <span className="text-navy-blue">Full-Time</span>
-                            <input type="radio" name="typeOfWork" value="Full Time" className="radio checked:bg-sky-blue" defaultChecked={prevListingDoc?.typeOfWork === "Full Time"} />
+                            <input type="radio" name="typeOfWork" value="Full Time" className="radio checked:bg-sky-blue" defaultChecked={!prevListingDoc || prevListingDoc?.typeOfWork === "Full Time"} />
                         </label>
                         <label className="label cursor-pointer">
                             <span className="text-navy-blue">Part-Time</span>
